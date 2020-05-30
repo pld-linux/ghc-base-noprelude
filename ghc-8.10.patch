@@ -1,0 +1,11 @@
+--- base-noprelude-4.13.0.0/base-noprelude.cabal~	2001-09-09 03:46:40.000000000 +0200
++++ base-noprelude-4.13.0.0/base-noprelude.cabal	2020-05-30 11:48:29.721965329 +0200
+@@ -34,7 +34,7 @@
+     location: https://github.com/hvr/base-noprelude.git
+ 
+ library
+-    build-depends:       base ==4.13.0.0
++    build-depends:       base
+     default-language:    Haskell2010
+ 
+     -- re-exported modules copied from base-4.13.0.0's exposed-modules
