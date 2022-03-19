@@ -2,7 +2,7 @@
 Summary:	"base" package sans "Prelude" module
 Name:		ghc-%{pkgname}
 Version:	4.13.0.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/base-noprelude
