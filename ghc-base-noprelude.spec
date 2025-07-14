@@ -32,7 +32,7 @@ Prelude package.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 cat >Setup.lhs<<'EOF'
 #!/usr/bin/env runhaskell
