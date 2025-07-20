@@ -1,5 +1,6 @@
 %define		pkgname	base-noprelude
 Summary:	"base" package sans "Prelude" module
+Summary(pl.UTF-8):	Pakiet "base" bez modułu "Prelude"
 Name:		ghc-%{pkgname}
 Version:	4.13.0.0
 Release:	2
@@ -30,6 +31,14 @@ base-4.13.0.0 package except for the Prelude module.
 An usage example for such a Prelude-replacement is available with the
 Prelude package.
 
+%description -l pl.UTF-8
+Ten pakiet upraszcza definiowanie własnych Prelude bez potrzeby użycia
+-XNoImplicitPrelude poprzez reeksportowanie pełnej hierarchi modułów
+pakietu base-4.13.0.0 z wyjątkiem modułu Prelude.
+
+Przykład użycia takiego zamiennika Prelude jest dostępny w pakiecie
+Prelude.
+
 %prep
 %setup -q -n %{pkgname}-%{version}
 %patch -P0 -p1
@@ -48,6 +57,7 @@ runhaskell Setup.lhs configure -v2 \
 	--docdir=%{_docdir}/%{name}-%{version}
 
 runhaskell Setup.lhs build
+
 runhaskell Setup.lhs haddock --executables
 
 %install
@@ -75,4 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc LICENSE
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
